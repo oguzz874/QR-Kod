@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankalar</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { max-width: 400px; margin: auto; }
+        h1 { margin-top: 20px; }
+        .bank-list a { display: block; margin: 10px 0; padding: 10px; background: #4CAF50; color: white; text-decoration: none; border-radius: 5px; }
+        .footer { margin-top: 20px; }
+        .footer a { margin: 0 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="firma_logo.png" alt="Firma Logosu" width="200"> <!-- Firma logonuzun ismi ve yolunu buraya koyun -->
+        <h1>Bankalar</h1>
+        <div class="bank-list">
+            <a href="#" onclick="goToBank('Yapıkredi TL', 'TR00 1234 0000 0000 0000 0000', 'Eska Plastik Ve Metal Turizm Nakliye İnşaat Tic. Ltd. Şti')">Yapıkredi TL</a>
+            <a href="#" onclick="goToBank('Denizbank TL', 'TR11 1111 1111 1111 1111 1111', 'Eska Plastik Ve Metal Turizm Nakliye İnşaat Tic. Ltd. Şti')">Denizbank TL</a>
+            <a href="#" onclick="goToBank('Yapıkredi EUR', 'TR22 2222 2222 2222 2222 2222', 'Eska Plastik Ve Metal Turizm Nakliye İnşaat Tic. Ltd. Şti')">Yapıkredi EUR</a>
+            <a href="#" onclick="goToBank('Denizbank EUR', 'TR33 3333 3333 3333 3333 3333', 'Eska Plastik Ve Metal Turizm Nakliye İnşaat Tic. Ltd. Şti')">Denizbank EUR</a>
+            <a href="#" onclick="goToBank('Yapıkredi USD', 'TR44 4444 4444 4444 4444 4444', 'Eska Plastik Ve Metal Turizm Nakliye İnşaat Tic. Ltd. Şti')">Yapıkredi USD</a>
+        </div>
+        <div class="footer">
+            <a href="https://api.whatsapp.com/send/?phone=905524802600&text=Merhabalar%2C+ürünleriniz+hakkında+bilgi+almak+istiyorum.&type=phone_number&app_absent=0">WhatsApp ile Bağlan</a>
+            <a href="https://www.eskaplastik.com.tr">Web Sitesi</a>
+        </div>
+    </div>
+
+    <script>
+        function goToBank(bankName, iban, receiverName) {
+            localStorage.setItem('bankName', bankName);
+            localStorage.setItem('iban', iban);
+            localStorage.setItem('receiverName', receiverName);
+            window.location.href = 'banka.html';
+        }
+    </script>
+</body>
+</html>
